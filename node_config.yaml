@@ -1,0 +1,22 @@
+---
+application:
+  -
+    add_package:
+      - php5
+      - libapache2-mod-php5
+      - php5-mcrypt
+    ensure: install
+    name: apache2
+  -
+    templates:
+      -
+        chmod: '646'
+        group: root
+        location: /var/www/html/test.php
+        owner: root
+        params:
+          -
+            php_note: "Hello World!!"
+        template_file: test.php
+password: XXXXXXXX
+username: root
